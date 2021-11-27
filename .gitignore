@@ -21,6 +21,7 @@ Thumbs.db
 
 # Server ignore
 /server/node_modules
+/server/dist
 
 # compiled output
 /kaloom-ui/dist
