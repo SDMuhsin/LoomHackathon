@@ -23,24 +23,24 @@ Thumbs.db
 /server/node_modules
 
 # compiled output
-/client/kaloom-ui/dist
-/client/kaloom-ui/tmp
-/client/kaloom-ui/out-tsc
+/kaloom-ui/dist
+/kaloom-ui/tmp
+/kaloom-ui/out-tsc
 # Only exists if Bazel was run
-/client/kaloom-ui/bazel-out
+/kaloom-ui/bazel-out
 
 # dependencies
-/client/kaloom-ui/node_modules
+/kaloom-ui/node_modules
 
 # profiling files
-/client/kaloom-ui/chrome-profiler-events*.json
+/kaloom-ui/chrome-profiler-events*.json
 
 # misc
-/client/kaloom-ui/.sass-cache
-/client/kaloom-ui/connect.lock
-/client/kaloom-ui/coverage
-/client/kaloom-ui/libpeerconnection.log
-/client/kaloom-ui/npm-debug.log
-/client/kaloom-ui/yarn-error.log
-/client/kaloom-ui/testem.log
-/client/kaloom-ui/typings
+/kaloom-ui/.sass-cache
+/kaloom-ui/connect.lock
+/kaloom-ui/coverage
+/kaloom-ui/libpeerconnection.log
+/kaloom-ui/npm-debug.log
+/kaloom-ui/yarn-error.log
+/kaloom-ui/testem.log
+/kaloom-ui/typings
