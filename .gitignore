@@ -1,0 +1,46 @@
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Server ignore
+/server/node_modules
+
+# compiled output
+/client/kaloom-ui/dist
+/client/kaloom-ui/tmp
+/client/kaloom-ui/out-tsc
+# Only exists if Bazel was run
+/client/kaloom-ui/bazel-out
+
+# dependencies
+/client/kaloom-ui/node_modules
+
+# profiling files
+/client/kaloom-ui/chrome-profiler-events*.json
+
+# misc
+/client/kaloom-ui/.sass-cache
+/client/kaloom-ui/connect.lock
+/client/kaloom-ui/coverage
+/client/kaloom-ui/libpeerconnection.log
+/client/kaloom-ui/npm-debug.log
+/client/kaloom-ui/yarn-error.log
+/client/kaloom-ui/testem.log
+/client/kaloom-ui/typings
