@@ -1,0 +1,12 @@
+<form nz-form [nzLayout]="'inline'" (onChange) = "checkIfUsernameValid" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="errMsg">
+        <nz-input-group nzPrefixIcon="user">
+            <input  (ngModelChange) = "checkIfUsernameValid()" [(ngModel)] = "username" name ="username" nz-input placeholder="Username" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    
+</form>
+<p>{{errMsg}}</p>

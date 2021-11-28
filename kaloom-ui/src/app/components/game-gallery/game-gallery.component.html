@@ -1,0 +1,22 @@
+<div>
+    <div nz-row nzJustify="center" nzAlign="middle" [nzGutter]="[16, 24]">
+        <div class = "gutter-row" nz-col >
+            <nz-space nzDirection="vertical" style = "padding-top:20px;padding-bottom:20px">
+                <app-user-creator *nzSpaceItem ></app-user-creator>
+            </nz-space>
+        </div>
+        
+    </div>
+    <div *ngFor = "let gameSet of gamesSplitToGrids" nz-row [nzGutter]="24" nzJustify="space-around" nzAlign="middle">
+        <div class = "gutter-row" *ngFor = "let game of gameSet" nz-col nzSpan="4">
+            <nz-card style="width:300px;" nzTitle="{{game}}">
+                <p>
+                    <a [routerLink] = "['/',game,'create']"> Create Game</a>
+                </p>
+                <p>
+                    <a [routerLink] = "['{{game}}/join']"> Join Game</a>
+                </p>
+            </nz-card>
+        </div>
+    </div>
+</div>
