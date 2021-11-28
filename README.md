@@ -1,27 +1,57 @@
-# KaloomUi
+# Kaloom
+
+This repo has projects for both front-end (KaloomUi) and backend (KaloomServer). 
+
+## KaloomUi
+
+___
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
 
-## Development server
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Kaloom Database
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+-------
 
-## Running end-to-end tests
+Install docker, open terminal/command-prompt & navigate inside kaloom-local-db folder and run the following command  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+docker compose up
+```
 
-## Further help
+If you have any other mongodb instance and want to use that instead, change the following line inside app.ts file with your url and credentials.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```javascript
+await connect('mongodb://kaloom:verySecure@127.0.0.1:27017/test?authSource=admin&w=1');
+```
+
+## KaloomServer APIs
+
+-------
+
+### APIs for managing lobby
+
+TODO: suraj working on it
+
+### APIs for managing users
+
+TODO: pending
+
+### APIs for processing videos
+
+TODO: pending
+
+### APIs for testing purpose
+
+- `/api/ping` - Type `GET`: For quick testing of Kaloom server.
+
+- `/api/authors` - Type `GET`: To get list of author details.
+
+- `/api/authors/add` - Type `POST`: To add a author.
