@@ -44,6 +44,10 @@ TODO: suraj working on it
 
 TODO: pending
 
+Requirements : 
+- POST /user/:username : 1. Returns 400 if username exists 2. If username is unique creates an entry in db 3. Starts an express session and stores username and db id for username in browser cookies
+- GET /user/exists/:username : Returns {exists:1} if user exists else {exists:0} (open to better response formats)
+
 ### APIs for processing videos
 
 TODO: pending
