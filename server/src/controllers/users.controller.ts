@@ -28,6 +28,9 @@ export class UsersController extends ApiController {
         if(!dup.length){
             // User does not exist
             let saveResp = await user.save();
+            /*
+            How TF do I access the session data without the req objec
+             */
             return saveResp;
         }
         else{

@@ -8,13 +8,13 @@ router.get('/', async (req:any,res:any)=>{
 
 /* LOOK HOW EASY IT IS TO SEND AN ERROR RESPONSE */
 router.post('/', async(req:any,res:any)=>{
-    console.log("Body", req.body)
+
     let user = new UserModel(req.body);
     let dup = await UserModel.find({username:user.username}).exec()
     if(!dup.length){
         let dbUser = await user.save();
-        req.session.username = dbUser.username;
-        req.session.userId = dbUser._id;
+        req.session.username = dbUser.username; // Session : This username is basically stored in server side
+        req.session.userId = dbUser._id;    // And in client a cookie with a session id is stored ( not set by us)
         res.status(200).json(user)
     }
     else{
