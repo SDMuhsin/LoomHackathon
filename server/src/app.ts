@@ -1,11 +1,15 @@
 require('source-map-support').install();
 import express = require('express');
-import bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser");
+const sessions = require('express-session');
 import { Dino } from 'dinoloop';
 
 import { PingController } from './controllers/ping.controller';
 import { connect } from 'mongoose';
 import { AuthorsController } from './controllers/authors.controller';
+import {UsersController} from './controllers/users.controller';
+
+import {userRouter} from './routers/userRouter';
 
 /*
     Connect to Mongo DB
@@ -25,14 +29,26 @@ runDbConnect().catch(err => console.log(err));
 const app = express();
 const port: number = 8000;
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json()); :DEPRACATED, express comes with this now
+app.use(express.urlencoded({extended: true}));
+app.use(express.json())
 
 const dino = new Dino(app, "/api");
+
+app.use(cookieParser());
+app.use(sessions({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    resave: false 
+}));
+app.use('/api/users', userRouter)
+
 
 dino.useRouter(() => express.Router());
 dino.registerController(PingController);
 dino.registerController(AuthorsController);
-
+//dino.registerController(UsersController)
 dino.bind()
 
 app.listen(port, () => console.log(`Server listening on ${port}`));
