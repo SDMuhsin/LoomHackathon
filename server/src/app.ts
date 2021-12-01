@@ -2,6 +2,8 @@ require('source-map-support').install();
 import express = require('express');
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
+const cors = require('cors');
+
 import { Dino } from 'dinoloop';
 
 import { PingController } from './controllers/ping.controller';
@@ -39,9 +41,10 @@ app.use(cookieParser());
 app.use(sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     saveUninitialized:true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    cookie: { maxAge: 1000 * 60 * 60 * 24 ,secure:false,httpOnly:false},
     resave: false 
 }));
+app.use(cors({origin:"http://localhost:4200",credentials:true}))
 app.use('/api/users', userRouter)
 
 

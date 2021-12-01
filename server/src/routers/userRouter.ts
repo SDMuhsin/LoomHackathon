@@ -5,6 +5,10 @@ import {User, UserModel} from "../models/user";
 router.get('/', async (req:any,res:any)=>{    
     res.json(await UserModel.find({}).exec())
 })
+router.get('/:username', async(req:any,res:any)=>{
+    let users = await UserModel.find({username:req.params.username}).exec();
+    res.json({exists: users.length > 0});
+})
 
 /* LOOK HOW EASY IT IS TO SEND AN ERROR RESPONSE */
 router.post('/', async(req:any,res:any)=>{
@@ -22,8 +26,16 @@ router.post('/', async(req:any,res:any)=>{
     }
 })
 
-router.get('/test/session', (req:any,res:any)=>{
-    res.json(req.session)
+
+router.get('/session/authcheck', (req:any,res:any)=>{
+    console.log("session check", req.session)
+    if(req.session.username){
+        res.json({authd:true,username:req.session.username})
+    }
+    else{
+        res.json({authd:false});
+    }
 })
+
 
 export {router as userRouter};

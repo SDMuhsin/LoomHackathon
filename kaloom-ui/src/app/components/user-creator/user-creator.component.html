@@ -2,7 +2,7 @@
     <nz-form-item>
       <nz-form-control nzErrorTip="errMsg">
         <nz-input-group nzPrefixIcon="user">
-            <input  (ngModelChange) = "checkIfUsernameValid()" [(ngModel)] = "username" name ="username" nz-input placeholder="Username" />
+            <input  [disabled] = "authd" [(ngModel)] = "username" name ="username" nz-input placeholder="Username" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
