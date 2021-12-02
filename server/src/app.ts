@@ -12,6 +12,10 @@ import { AuthorsController } from './controllers/authors.controller';
 import {UsersController} from './controllers/users.controller';
 
 import {userRouter} from './routers/userRouter';
+import {gameRouter} from './routers/gameRouter';
+
+import {isLoggedIn} from './utility/isLoggedIn';
+
 
 /*
     Connect to Mongo DB
@@ -46,7 +50,7 @@ app.use(sessions({
 }));
 app.use(cors({origin:"http://localhost:4200",credentials:true}))
 app.use('/api/users', userRouter)
-
+app.use('/api/game/',[isLoggedIn], gameRouter)
 
 dino.useRouter(() => express.Router());
 dino.registerController(PingController);
