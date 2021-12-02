@@ -19,6 +19,8 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 import { GameGalleryComponent } from './components/game-gallery/game-gallery.component';
 import { UserCreatorComponent } from './components/user-creator/user-creator.component';
@@ -47,7 +49,9 @@ registerLocaleData(en);
     NzFormModule,
     NzInputModule,
     NzSpaceModule,
-
+    NzDividerModule,
+    NzButtonModule,
+    
     FormsModule,
     ReactiveFormsModule 
   ],

@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharadesCreateMenuComponent implements OnInit {
 
+  gameName:string = "";
+  gameMaxPlayers:number = 0;
+  gameMaxRounds:number = 0;
+
   constructor() { }
 
   ngOnInit(): void {

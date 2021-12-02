@@ -1,1 +1,27 @@
-<p>charades-create-menu works!</p>
+<div>
+
+    <div nz-row [nzGutter]="16" nzJustify="center">
+        <div nz-col class="gutter-row" [nzSpan]="6" >
+            <input nz-input placeholder="Game Name" [(ngModel)]="gameName" />
+        </div>
+    </div>
+    <nz-divider nzOrientation="left" ></nz-divider>
+    <div nz-row [nzGutter]="16" nzJustify="center">
+        <div nz-col class="gutter-row" [nzSpan]="6" >
+            <input nz-input placeholder="Players" max="10" type = "number" [(ngModel)]="gameMaxPlayers" />
+        </div>
+    </div>
+    <nz-divider nzOrientation="left" ></nz-divider>
+    <div nz-row [nzGutter]="16" nzJustify="center">
+        <div nz-col class="gutter-row" [nzSpan]="6" >
+            <input nz-input placeholder="Rounds" max="10" type = "number" [(ngModel)]="gameMaxRounds" />
+        </div>
+    </div>
+    <nz-divider nzOrientation="left" ></nz-divider>
+    <div nz-row [nzGutter]="16" nzJustify="center">
+
+        <button nz-button nzType="primary">Create Game</button>
+
+    </div>
+    
+</div>
